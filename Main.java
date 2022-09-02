@@ -9,16 +9,34 @@ public class Main {
     }
 
     public static void doMergeSort() {
-        int[] arr = new int[] {5,4,1,8,7,2,6,3,7};
+        System.out.println("Integers");
+
+        int[] intArr = new int[] {5,4,1,8,7,2,6,3,7};
         
-        List<Integer> unsortedList = new ArrayList<>();
-        for (Integer i : arr) {
-            unsortedList.add(i);
+        List<Integer> intUnsortedList = new ArrayList<>();
+        for (Integer i : intArr) {
+            intUnsortedList.add(i);
         }
         
-        System.out.println("Unsorted List:\t" + unsortedList);
-        List<Integer> sortedList = MergeSort.mergeSort(unsortedList);
-        System.out.println("Sorted List:\t" + sortedList);
+        System.out.println("Unsorted List:\t" + intUnsortedList);
+        List<Integer> intSortedList = MergeSort.mergeSort(intUnsortedList);
+        System.out.println("Sorted List:\t" + intSortedList);
+
+
+        System.out.println("Strings");
+        
+        String[] strArr = new String[] {"cat", "bat", "abc", "def", "elf", "car", "bar", "bet", "eat"};
+        
+        List<String> strUnsortedList = new ArrayList<>();
+        for (String i : strArr) {
+            strUnsortedList.add(i);
+        }
+        
+        System.out.println("Unsorted List:\t" + strUnsortedList);
+        List<String> strSortedList = MergeSort.mergeSort(strUnsortedList);
+        System.out.println("Sorted List:\t" + strSortedList);
+
+        
 
     }
 }

@@ -9,22 +9,14 @@ public class MergeSort {
      * @param list of Integers
      * @return
      */
-    public static List<Integer> mergeSort(List<Integer> list) {
+    public static <T extends Comparable<T>> List<T> mergeSort(List<T> list) {
         if (list.size() <= 1) {
-            return list;
-        }
-        if (list.size() == 2) {
-            if (list.get(0) > list.get(1)) {
-                int temp = list.get(0);
-                list.set(0, list.get(1));
-                list.set(1, temp);
-            }
             return list;
         }
         
         int n = list.size() / 2;
-        List<Integer> a = mergeSort(list.subList(0, n));
-        List<Integer> b = mergeSort(list.subList(n, list.size()));
+        List<T> a = mergeSort(list.subList(0, n));
+        List<T> b = mergeSort(list.subList(n, list.size()));
 
         return merge(a, b);
     }
@@ -36,8 +28,8 @@ public class MergeSort {
      * @param listB a sorted list.
      * @return listA and listB merged in sorted order.
      */
-    public static List<Integer> merge(List<Integer> listA, List<Integer> listB) {
-        List<Integer> merged = new ArrayList<>();
+    public static <T extends Comparable<T>> List<T> merge(List<T> listA, List<T> listB) {
+        List<T> merged = new ArrayList<>();
         int lengthA = listA.size(), lengthB = listB.size();
         int n = lengthA + lengthB;
         int indexA = 0, indexB = 0;
@@ -53,7 +45,7 @@ public class MergeSort {
             }
 
             // Add the next lowest item
-            if (listA.get(indexA) < listB.get(indexB)) {
+            if (listA.get(indexA).compareTo(listB.get(indexB)) < 0) {
                 merged.add(listA.get(indexA++));
             } else {
                 merged.add(listB.get(indexB++));
