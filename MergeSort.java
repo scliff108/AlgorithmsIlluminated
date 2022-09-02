@@ -4,9 +4,9 @@ import java.util.List;
 public class MergeSort {
 
     /**
-     * Recursivelly calls itself to sort a list of Integers.
+     * Recursivelly calls itself to sort a list of comparable elements.
      * 
-     * @param list of Integers
+     * @param list of comparable elements
      * @return
      */
     public static <T extends Comparable<T>> List<T> mergeSort(List<T> list) {
