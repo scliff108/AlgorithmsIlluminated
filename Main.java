@@ -4,8 +4,17 @@ import java.util.List;
 public class Main {
     
     public static void main(String[] args) {
+        System.out.println("===========================");
         System.out.println("Merge Sort");
+        System.out.println("===========================");
         doMergeSort();
+
+        System.out.println();
+
+        System.out.println("===========================");
+        System.out.println("Karatsuba Multiplicaiton");
+        System.out.println("===========================");
+        doKaratsuba();
     }
 
     public static void doMergeSort() {
@@ -35,8 +44,18 @@ public class Main {
         System.out.println("Unsorted List:\t" + strUnsortedList);
         List<String> strSortedList = MergeSort.mergeSort(strUnsortedList);
         System.out.println("Sorted List:\t" + strSortedList);
+    }
 
-        
-
+    public static void doKaratsuba() {
+        long x = 5678;
+        long y = 1234;
+        System.out.println("Standard:\t" + x + " x " + y + " = " + x*y);
+        long karatsuba = Karatsuba.karatsuba(x, y);
+        System.out.println("Karatsuba:\t" + x + " x " + y + " = " + karatsuba);
+        x = 9563258;
+        y = 6598753;
+        System.out.println("Standard:\t" + x + " x " + y + " = " + x*y);
+        karatsuba = Karatsuba.karatsuba(x, y);
+        System.out.println("Karatsuba:\t" + x + " x " + y + " = " + karatsuba);
     }
 }
